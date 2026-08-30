@@ -1,0 +1,8 @@
+a. The names of the functions are def adventure(): and def create_player():
+b. line 7
+c. line 56
+d. adventure()
+e. The input(function) prompts the user to input their answer to be used by the if else statments on lines 24-35
+f. It prints a "unique speciality" giving the user 75 mana and health 
+g. it seems like a guide for the program, telling it store the value from the if else statments where the curly brackets are 
+h. I'm not sure but I think on line 56 return 0 is the issue. The bottom of the code says that win = adventure() as long as win == 0, since adventure() is always returned as 0 this creates the loop. 
