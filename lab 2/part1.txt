@@ -1,0 +1,5 @@
+1. Access values from Preferences using dot notation
+2. A 2D list
+3. a cell object
+4. You can access specific cells using two indexes like self.board[0][0]
+you can change the type of a cell by calling one of the cells methods
