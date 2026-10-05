@@ -176,9 +176,9 @@ class GameData:
         row = random.randrange(0, Preferences.NUM_ROWS)
         col = random.randrange(0, Preferences.NUM_COLS)
         cell = self.board[row][col]
-        # // Here I changed the enemies to be spawned randomly like the food is. 
         if cell.is_player():
-            self.set_game_over()
+            pass
+        # // Here I changed the enemies to be spawned randomly like the food is. 
         elif cell.is_food():
             self.food.remove(cell)
             cell.become_enemy()

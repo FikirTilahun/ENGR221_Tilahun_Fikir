@@ -1,0 +1,4 @@
+Lab 2 is grid like game where the player (penguin) runs around getting fish(food) while avoiding enemies (seals).
+I only modified gameData.py, besides what was asked to be done by the assignemnt (see my pseudocoe upload on canvas). I changed a couple things about the game. 
+I customized the spawn behavior of the enemy, at first enemies were only added to the bottom right making the game predictable, changed add_enemy() so that it generates a random row/column to spawn an enemy the same way food would, the problem with this is that if an enemy spawns on exactly where the player is then its an unfair "game over", to fix that I simply added a pass if that happens to be the case 
+I also customized the user to spawn in the middle rather than top left, to increase the diffucilty a little bit by throwing them in the middle of the fray. 

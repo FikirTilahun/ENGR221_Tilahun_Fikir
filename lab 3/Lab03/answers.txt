@@ -1,0 +1,2 @@
+New array is created by the method create_new_array(), the length is predetermined from prefrences at 20. then generates random numbers between 0 and .Max_VAL and then returns
+A new array is created when the user clicks I, S, or B
