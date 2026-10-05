@@ -1,2 +1,56 @@
 New array is created by the method create_new_array(), the length is predetermined from prefrences at 20. then generates random numbers between 0 and .Max_VAL and then returns
 A new array is created when the user clicks I, S, or B
+yield returns the current values then pauses, it then continues from where it paused. 
+so selection_sort uses yield to pause and return values at specific points, what tells it to resume though is get_next_step method,
+outter index and inner index are two arguments along with self and array. array is updated by sorting algorithm 
+
+PART 2 
+Selection sort is constantly selecting the smallest value from the unsorted side of the array 
+Since we have a loop inside another loop O(n^2) 
+For space complexity we are using a constant amount of memory regardless of how big the array is, we keep the same variables like min_idx. O(1)
+
+PART 3
+insertion sort takes a value in the array and checks if the value to its left is greater or smaller. If greater than it switches the values eventually creating a lowest to highest list
+This is also O(n^2) since there is a whileloop in the for loop 
+Space complexity is O(1) because we only need to keep a constant memory of j and i 
+
+PART 4
+Bubble sort compares neighboring values, it will compare them find the greatest one and swap them moving the largest value to the end
+anothr nested loop so its O(n^2)
+also O(1) because it sorts the same array only using a constant amount of memory 
+
+[8,1,4,2]
+i=0 j=0 [1,8,4,2]
+i=0, j=1 [1,4,8,2]
+i=0 , j=2 [1,4,2,8]
+i=1, j=0 [1,4,2,8]
+i=1, j=1 [1,2,4,8] 
+i=2, j=0 [1,2,4,8]
+
+4.3: We don't need to change -1 because it serves the purpose of not wasting time to check if the end value of the array after each pass needs to be moved. 
+4.4
+a.using Claude 
+b.the prompt is : Write a Python bubble_sort() method that sorts self.array in ascending order in place without using Python's built-in sort() function.
+c. def bubble_sort(self):
+        n = len(self.array)
+
+        for i in range(n - 1):
+            swapped = False
+
+            for j in range(n - 1 - i):
+                if self.array[j] > self.array[j + 1]:
+                    self.array[j], self.array[j + 1] = \
+                        self.array[j + 1], self.array[j]
+                    swapped = True
+            if not swapped:
+                break
+d. The code doesn't run everytime i run it the program quits. 
+e. there is no yield in this code the way there is in the other sorting algorithm methods
+f. I would add the yield, because get_next_step() uses next(self.alg_method) it gives the qeue to move on 
+
+part 5
+selection sort: 100 (0.0007221698760986328), 1000 (0.07276010513305664), 10,000(7.257688999176025)
+insertion: 100(0.0010051727294921875), 1000(0.11349606513977051) 10000(11.679246664047241)
+bubble: 100(0.0012989044189453125) 1000(0.14036107063293457) 10000(14.85315990447998) 
+d. even though they all have the same big o notation their runtimes can still differ, so you can say big o notation is more about how input size effects the amount 
+of work the program needs to do but not neccesiraly its speed. 
