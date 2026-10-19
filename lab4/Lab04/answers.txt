@@ -1,0 +1,19 @@
+a.the player is represented as a list because it has a growing body making it easy to constantly add to the body, self.body[0] represents the very beginning of the list aka the head.
+b.def get_player(self) and def get_tail(self) get the head and the tail of the players body, we need the head as thats the operative part of the body dictating direction/starting point 
+and the tail is how we know where the body ends, when we move without adding food the cell the tail occupied becomes empty and when we do add food we add a cell to become the new tail
+c.there are 5 movement modes and they are simply cardinal directions and ai mode, cardinal directions are used when the player is manual moving one cell in selected direction 
+and AI mode uses the searching algorithms to move around
+d.get_next_cell() returns the neighboring cell from the direction chosen, the ai method should select bfs or dfs but we haven't put them in
+yet so it just randomly searches. 
+
+part 2
+a. when adding an item to stack it adds to the end for example adding letters a-d a is on the bottom d is on top
+b. from the top
+c. for queues we add it to the end 
+e. when removing we remove from the beginning giving priority to the first added items
+
+part 3
+a. the AI seemingly acts erratic when using DFS but this is because DFS searches deeply exploring by continusly going forward before it backtracks, 
+BFS explore more horizontally constantly going to neighboring cells
+b. BFS would find the shorter path since it explores every opportunity to get to the goal 
+where as DFS will find the goal but since it focuses on exhausting one paths limits it stops once it hits the goal despite there possibly being a shorter path it didnt get the chance to explore
