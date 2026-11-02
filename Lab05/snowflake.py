@@ -60,17 +60,17 @@ class KochSnowflake:
     def draw_curve_stack(self):
         """ TODO docstring """
         
-        commands = [("add_curve", self.init_length, self.init_depth)]
+        commands = [("add_curve", self.init_length, self.init_depth)]# creates the stack/list of commands to be executed. 
 
-        while commands:
+        while commands: # keep looping as long as there are commands in the stack
             command = commands.pop()# removes the last element of the list and returns it.
-            action = command[0] # action is the first element of the command 
+            action = command[0] # action is the first element of the command (add_curve is whats poped first)
             if action == "add_curve":
                 length = command[1] # this is the second element of the command 
                 depth = command[2] # this is the third element of the command 
                 if depth == 0:
                     self.t.forward(length)
-                else: 
+                else: # 3 angle changes + 4 segments = 7 commands to add to the stack
                     commands.append(("add_curve", length/3, depth-1))# adds the first segment of the curve to the stack
                     commands.append(("turn_left", 60))# THIS IS THE FIRST TURN OF THE CURVE
                     commands.append(("add_curve", length/3, depth-1))# 
