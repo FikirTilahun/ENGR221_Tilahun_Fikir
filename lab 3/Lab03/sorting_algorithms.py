@@ -1,6 +1,6 @@
 """ TODO
-Author: Your name here!
-Add a description here!
+Fikir Tilahun 922680314
+3 different ways to sort mixed values in a list
 """
 
 import random

@@ -1,0 +1,1 @@
+This lab draws a Koch snowflake using two approaches: recursion and a stack-based method. It also compares the execution time and memory usage of both methods.

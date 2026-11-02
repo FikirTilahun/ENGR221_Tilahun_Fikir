@@ -322,7 +322,7 @@ class GameData:
             print("Exploring:", current.get_row(), current.get_col()) # keeps track of the current cell being explored, used to understand dfs bheavior
             if current.is_food(): # If the current cell is food, we are done
                 return self.get_first_cell_in_path(current) # Return the first cell in the path to the food
-             
+            
             for neighbor in self.get_neighbors(current): # using get_neighbors() to get all valid neighbors of the current cell  
                 if not neighbor.on_search_list(): # checks if the neighbor has already been added to the search list
                     if not neighbor.is_body():# checks if the neighbor is not part of the body

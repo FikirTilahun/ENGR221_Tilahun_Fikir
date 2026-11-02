@@ -1,0 +1,9 @@
+1.1 (a) Both methods draw a full snowflake by drawing 3 sides each with the same amount of segments determined by the length and depth, they differ in how they actually develop the segments
+1.1 (b) each draws 1 side for the inital call 
+1.1(c) subtracts end time and start time
+
+part 4
+a. recursive method used 100.21875 MB of memory and took 6 seconds 
+stack used 35 MB and 5.9 seconds
+b. recursive method uses more memory because it calls itself over and over
+while the stack didn't 
