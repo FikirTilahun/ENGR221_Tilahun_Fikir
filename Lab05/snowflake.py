@@ -63,26 +63,27 @@ class KochSnowflake:
         commands = [("add_curve", self.init_length, self.init_depth)]# creates the stack/list of commands to be executed. 
 
         while commands: # keep looping as long as there are commands in the stack
-            command = commands.pop()# removes the last element of the list and returns it.
-            action = command[0] # action is the first element of the command (add_curve is whats poped first)
-            if action == "add_curve":
-                length = command[1] # this is the second element of the command 
-                depth = command[2] # this is the third element of the command 
+            command = commands.pop()# removes the last element/command of the list and returns it.
+            action = command[0] # retrieves first element, tells what type of command we process, add curve or turn left?
+            if action == "add_curve": # if add_curve command is found, we need to check if we are at the base case or not.
+                length = command[1] # retrives second element of the command, which is the length of the segment to draw
+                depth = command[2] # retrieves third element of the command, which is the depth of the curve to draw
                 if depth == 0:
                     self.t.forward(length)
                 else: # 3 angle changes + 4 segments = 7 commands to add to the stack
+                    # Last in first out, so we add the commands in reverse order of how we want them executed
                     commands.append(("add_curve", length/3, depth-1))# adds the first segment of the curve to the stack
-                    commands.append(("turn_left", 60))# THIS IS THE FIRST TURN OF THE CURVE
+                    commands.append(("turn_left", 60))# adds first turn to the stack
                     commands.append(("add_curve", length/3, depth-1))# 
                     commands.append(("turn_right", 120))
                     commands.append(("add_curve", length/3, depth-1))
                     commands.append(("turn_left", 60))
-                    commands.append(("add_curve", length/3, depth-1)) # final segment of the curve
-            elif action == "turn_left":
-                self.t.left(command[1]) # turn left by the specified angle
+                    commands.append(("add_curve", length/3, depth-1)) 
+            elif action == "turn_left": # these handle turning commands depending on left or right. 
+                self.t.left(command[1]) 
             elif action == "turn_right":
                 self.t.right(command[1]) 
-
+# keeps going until stack is empty, meaning one side of the snowflake has been drawn.
 
     ##########################
     # Draw snowflake methods #
