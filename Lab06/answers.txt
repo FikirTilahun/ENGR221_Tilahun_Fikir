@@ -4,3 +4,12 @@ B. a node knows its a leaf when it has no children, if self.children is empty th
 C. height is how far the node is from the farthest leaf
 D. depth is how far the current node is from the root
 E. You would have to either search a tree using BFS or DFS ir you can use the hash map to find what value is associated with the professors name or key
+3.1 
+A. A dictionary containing key value pairs and nodes, last names,faculty_dict["Zhang"]
+B. Dictionary
+C. contains a method from the prefrences class, specfically looks like a file of all the data we need
+4.1 
+A. stores professors data
+B.Represents SCHOOL 
+c. Level order BFS
+d. it reads what the user typed as a key to match to a value
